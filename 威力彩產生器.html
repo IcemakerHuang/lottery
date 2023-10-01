@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 威力彩規則
+        // A 區 1~38 取 6 個數字
+        // B 區 1~8 取 1 個數字
+
+        // console.log(Math.random(100))
+        
+        // for(let i = 0 ; i < 1 ; i++){
+        //     document.write(`${Math.ceil(Math.random()*8)}<br>`)
+        //     for(let i = 0 ; i < 6 ; i++){
+        //     document.write(`${Math.ceil(Math.random()*38)}<br>`)
+        //     }
+        //     }
+
+
+
+        let numbers = []
+        let readyNumber = []
+            for(let i = 0 ; i < 1 ; i++){
+                numbers.push(Math.ceil(Math.random()*8))
+                for(let i = 0 ; i < 100 ; i++){
+                    if(numbers.length == 7){
+                        break
+                    }else{
+                        readyNumber.push(Math.ceil(Math.random()*38))
+                        console.log(readyNumber)
+                        if(numbers.includes(readyNumber[i]) == true){
+                            continue
+                        }else{
+                        numbers.push(readyNumber[i])
+                        // numbers.push(Math.ceil(Math.random()*38))
+                        }
+                    }
+                }
+            }
+        document.write(`${numbers}<br>`)
+        document.write(`A 區: ${numbers[1]}、${numbers[2]}、${numbers[3]}、${numbers[4]}、${numbers[5]}、${numbers[6]}<br>B 區: ${numbers[0]}`)
+
+
+
+
+
+
+        // const rand = (min, max) => {
+        //     return Math.ceil(Math.random()*(max - min)) + min
+        // }
+        // for(let i = 0 ; i < 6 ; i++){
+
+        //     // console.log(rand(0,38))
+        //     console.log(rand(0))
+        // }
+
+
+    </script>
+</body>
+</html>
